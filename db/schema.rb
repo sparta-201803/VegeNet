@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320121921) do
+ActiveRecord::Schema.define(version: 20180320131934) do
+
+  create_table "areas", force: :cascade do |t|
+    t.string "area_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  ActiveRecord::Schema.define(version: 20180320121921) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "product_id"
