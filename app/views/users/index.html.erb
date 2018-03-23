@@ -1,0 +1,11 @@
+<% @users.each do |user| %>
+  <% if user.img_url && user.area_id %>
+    <div class="col-md-3 col-sm-6 red">
+      <div class="form-group">
+        <%= image_tag user.img_url %><br>
+        <%= user.area_id %><br>
+        <%= link_to user.name, user %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

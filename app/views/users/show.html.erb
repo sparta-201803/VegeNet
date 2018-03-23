@@ -1,0 +1,7 @@
+<h1>生産者情報</h1>
+<%= image_tag @user.img_url %><br>
+<%= @user.name %><br>
+<%= @user.area %><br>
+<% if current_user.id == @user.id %>
+  <%= link_to "編集", edit_user_registration_path(@user), method: :post%>
+<% end %>
