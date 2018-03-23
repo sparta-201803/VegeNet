@@ -1,7 +1,10 @@
-<h1>生産者情報</h1>
-<%= image_tag @user.img_url %><br>
-<%= @user.name %><br>
-<%= @user.area %><br>
-<% if current_user.id == @user.id %>
-  <%= link_to "編集", edit_user_registration_path(@user), method: :post%>
-<% end %>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+
+    <h2>生産者の詳細</h2>
+    <%= image_tag @user.img_url %><br>
+    <%= @user.name %><br>
+    <%= Area.find(@user.area_id).area_name %><br>
+    <%= @user.appeal %>
+  </div>
+</div>
