@@ -1,17 +1,8 @@
 Rails.application.routes.draw do
-  get 'products/index'
 
-  get 'products/new'
+  devise_for :users
+  resources :users, only:[:index,:show,:edit,:new,]
+  resources :products
+  root 'users#index'
 
-  get 'products/create'
-
-  get 'products/edit'
-
-  get 'products/update'
-
-  get 'products/show'
-
-  get 'products/destroy'
-
-  # devise_for :users
 end
