@@ -3,13 +3,13 @@
 
     <h2>商品の詳細</h2>
     <%= image_tag @product.image_url %><br>
-    商品名：<%= @product.product_id %><br>
-    生産地：<%= Area.find(User.find(@product.producer).area_id).area_name %><br>
+    商品名：<%= @product.name %><br>
+    生産地：<%= @product.user.area.area_name %><br>
     価格：<%= @product.price %>
     <div class="abc">
       商品説明<%= @product.description %>
     </div>
     <%= button_to "購入" %>
-    
+
   </div>
 </div>

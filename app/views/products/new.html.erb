@@ -1,5 +1,6 @@
 <h1>商品登録フォーム</h1>
 <%= form_with model: @product, local: true do |form| %>
+  <p>生産者名: <%= current_user.name %></p>
   <p>
     商品名：<br>
 
@@ -12,23 +13,20 @@
   </p>
   <p>
     数量：<br>
-    <%= form.number_field :volume, default: current_user.id%>
+    <%= form.number_field :volume %>
   </p>
   <p>
     商品説明：<br>
-    <%= form.number_field :description %>
+    <%= form.text_field :description %>
   </p>
-  <p>
-    生産者ID：<br>
 
-    <%= form.text_area :user_id %>
+    <%= form.hidden_field :user_id, value: current_user.id  %>
 
-  </p>
   <p>
     イメージ画像URL：<br>
     <%= form.text_area :image_url %>
   </p>
-  <%= current_user.id %>
+
   <%= form.submit "登録" %>
 <% end %>
 <!-- , disabled:true -->
