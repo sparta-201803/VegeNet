@@ -2,7 +2,9 @@
 <%= form_with model: @product, local: true do |form| %>
   <p>
     商品名：<br>
+
     <%= form.text_field :name %>
+
   </p>
   <p>
     金額：<br>
@@ -14,11 +16,13 @@
   </p>
   <p>
     商品説明：<br>
-    <%= form.text_field :description %>
+    <%= form.number_field :description %>
   </p>
   <p>
     生産者ID：<br>
+
     <%= form.text_area :user_id %>
+
   </p>
   <p>
     イメージ画像URL：<br>
@@ -27,3 +31,4 @@
   <%= current_user.id %>
   <%= form.submit "登録" %>
 <% end %>
+<!-- , disabled:true -->
