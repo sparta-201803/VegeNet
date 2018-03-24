@@ -14,7 +14,7 @@
   </p>
   <p>
     数量：<br>
-    <%= form.number_field :volume %>
+    <%= form.number_field :volume, default: current_user.id%>
   </p>
   <p>
     商品説明：<br>
@@ -28,5 +28,6 @@
     イメージ画像URL：<br>
     <%= form.text_area :image_url %>
   </p>
+  <%= current_user.id %>
   <%= form.submit "登録" %>
 <% end %>
