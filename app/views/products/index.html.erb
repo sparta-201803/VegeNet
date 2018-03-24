@@ -1,2 +1,8 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<h1>書籍一覧</h1>
+<ul>
+  <% @products.each do |product| %>
+    <li><%= link_to product.name, book_path(product) %></li>
+  <% end %>
+</ul>
+<!-- 下記を追加 -->
+<a href="<%= new_product_path %>">登録する</a>
