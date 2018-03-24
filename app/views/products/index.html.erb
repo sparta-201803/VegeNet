@@ -1,11 +1,14 @@
 
-<% @products.each do |puroduct| %>
+<% @products.each do |product| %>
+
+
+
 
     <div class="col-md-3 col-sm-6 red">
       <div class="form-group">
-        <%= image_tag product.img_url %><br>
-        <%= Area.find(product.area_id).area_name %><br>
-        <%= link_to product.name, user %>
+        <%= image_tag product.image_url %><br>
+        <%= product.producer %><br>
+        <%= link_to product.product_id, product %>
       </div>
     </div>
 
