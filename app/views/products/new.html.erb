@@ -2,7 +2,9 @@
 <%= form_with model: @product, local: true do |form| %>
   <p>
     商品名：<br>
-    <%= form.text_field :product_id %>
+
+    <%= form.text_field :name %>
+
   </p>
   <p>
     金額：<br>
@@ -18,7 +20,9 @@
   </p>
   <p>
     生産者ID：<br>
-    <%= form.number_field :producer, default: current_user.id %>
+
+    <%= form.text_area :user_id %>
+
   </p>
   <p>
     イメージ画像URL：<br>
