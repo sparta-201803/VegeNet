@@ -5,10 +5,6 @@
     <%= form.text_field :product_id %>
   </p>
   <p>
-    カテゴリーID：<br>
-    <%= form.text_area :category_id %>
-  </p>
-  <p>
     金額：<br>
     <%= form.number_field :price %>
   </p>
@@ -18,11 +14,11 @@
   </p>
   <p>
     商品説明：<br>
-    <%= form.text_field :description %>
+    <%= form.number_field :description %>
   </p>
   <p>
     生産者ID：<br>
-    <%= form.text_area :producer %>
+    <%= form.number_field :producer, default: current_user.id %>
   </p>
   <p>
     イメージ画像URL：<br>
@@ -30,3 +26,4 @@
   </p>
   <%= form.submit "登録" %>
 <% end %>
+<!-- , disabled:true -->
