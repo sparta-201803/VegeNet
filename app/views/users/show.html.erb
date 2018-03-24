@@ -5,6 +5,8 @@
     <%= image_tag @user.img_url %><br>
     <%= @user.name %><br>
     <%= Area.find(@user.area_id).area_name %><br>
-    <%= @user.appeal %>
+    <div class="abc">
+      <%= @user.appeal %>
+    </div>
   </div>
 </div>
