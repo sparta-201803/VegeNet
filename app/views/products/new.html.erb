@@ -1,2 +1,32 @@
-<h1>Products#new</h1>
-<p>Find me in app/views/products/new.html.erb</p>
+<h1>商品登録フォーム</h1>
+<%= form_with model: @product, local: true do |form| %>
+  <p>
+    商品名：<br>
+    <%= form.text_field :productid %>
+  </p>
+  <p>
+    カテゴリーID：<br>
+    <%= form.text_area :categoryid %>
+  </p>
+  <p>
+    金額：<br>
+    <%= form.number_field :price %>
+  </p>
+  <p>
+    数量：<br>
+    <%= form.number_field :svolume %>
+  </p>
+  <p>
+    商品説明：<br>
+    <%= form.text_field :description %>
+  </p>
+  <p>
+    生産者ID：<br>
+    <%= form.text_area :producer %>
+  </p>
+  <p>
+    イメージ画像URL：<br>
+    <%= form.text_area :image_url %>
+  </p>
+  <%= form.submit "登録" %>
+<% end %>
