@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :products
+  belongs_to :area, optional: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   # belongs_to :area
