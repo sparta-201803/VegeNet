@@ -1,12 +1,19 @@
 ja:
+  
   activerecord:
     models:
       product: "生産者"
     attributes:
-      users:
+      customer:
         name: "名前"
         email: "電子メールアドレス"
         area: "生産地"
+      product:
+        name: "商品名"
+        price: "金額"
+        volume: "数量"
+        description: "商品説明"
+        image_url: "イメージ画像URL"
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
