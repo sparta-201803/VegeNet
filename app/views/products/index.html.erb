@@ -1,6 +1,17 @@
 
-<% @products.each do |product| %>
+<div class="col-md-12">
+ <div class="form-inline pull-right" style="margin-bottom:10px;">
+   <%= search_form_for @q do |f| %>
+     <div class="form-group">
+       <%= f.search_field :name_cont, placeholder: "商品名で検索", class: "form-control" %>
+       <%= f.submit "検索", class: "btn btn-primary" %>
+     </div>
+   <% end %>
+ </div>
+</div>
 
+
+<% @products.each do |product| %>
 
 
 

@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
 
+    @q = Product.order(created_at: :desc).ransack(params[:q])
+    @products = @q.result(distinct: true)
   end
 
   def new
