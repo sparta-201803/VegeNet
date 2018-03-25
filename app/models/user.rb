@@ -11,4 +11,8 @@ class User < ApplicationRecord
           :rememberable,
           :trackable
           :validatable
+  validates :name, presence: true
+  validates :email, presence: true
+  
+
 end
