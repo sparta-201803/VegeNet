@@ -16,6 +16,7 @@
     <% if current_user %>
       <% if current_user.id == @product.user_id %>
         <%= button_to "編集", edit_product_path, method: :get %>
+        <%= button_to "削除", products_path(@products), method: :delete %>
       <% end %>
     <% end %>
   </div>

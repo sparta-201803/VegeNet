@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def destroy
     # URLで指定した番号のモデルを削除する
 
-    @usr = Book.find(params[:id])
+    @user = User.find(params[:id])
     @user = User.destroy
   end
 end
