@@ -3,9 +3,7 @@
   <p>生産者名: <%= current_user.name %></p>
   <p>
     商品名：<br>
-
     <%= form.text_field :name %>
-
   </p>
   <p>
     金額：<br>
@@ -17,10 +15,10 @@
   </p>
   <p>
     商品説明：<br>
-    <%= form.text_field :description %>
+    <%= form.text_area :description %>
   </p>
 
-    <%= form.hidden_field :user_id, value: current_user.id  %>
+  <%= form.hidden_field :user_id, value: current_user.id  %>
 
   <p>
     イメージ画像URL：<br>
