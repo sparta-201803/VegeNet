@@ -14,7 +14,9 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">VegeNet</a></li>
         <% if user_signed_in? %>
-          <li><%= link_to "出品", new_product_path %></li>
+          <% if User.find(current_user.id).area_id %>
+            <li><%= link_to "出品", new_product_path %></li>
+          <% end %>
           <li><%= link_to "設定変更", edit_user_registration_path %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
         <% else %>
