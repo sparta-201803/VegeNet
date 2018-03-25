@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
   def index
-
     @q = Product.order(created_at: :desc).ransack(params[:q])
     @products = @q.result(distinct: true)
   end
@@ -34,6 +33,8 @@ class ProductsController < ApplicationController
 
   def buy
     @product = Product.find(params[:id])
+    @product.volume = @product.volume.to_i - 1
+    @product.save
   end
   private
 
