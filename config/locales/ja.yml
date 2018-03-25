@@ -3,7 +3,7 @@ ja:
     models:
       product: "生産者"
     attributes:
-      customer:
+      users:
         name: "名前"
         email: "電子メールアドレス"
         area: "生産地"

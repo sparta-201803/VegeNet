@@ -10,8 +10,11 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.save
-    redirect_to "/products/#{@product.id}"
+    if @product.save
+      redirect_to "/products/#{@product.id}"
+    else
+      render :new
+    end
   end
 
   def edit
