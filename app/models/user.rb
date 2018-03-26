@@ -1,9 +1,7 @@
 class User < ApplicationRecord
-  has_many :products
   belongs_to :area, optional: true
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  # belongs_to :area
+  has_many :products
+
   mount_uploader :img_url, AvatarUploader
   devise  :database_authenticatable,
           :registerable,
@@ -13,6 +11,6 @@ class User < ApplicationRecord
           :validatable
   validates :name, presence: true
   validates :email, presence: true
-  
+
 
 end

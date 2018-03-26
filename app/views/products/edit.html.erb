@@ -26,9 +26,8 @@
 
   <p>
     イメージ画像URL：<br>
-    <%= form.text_area :image_url %>
+    <%= form.file_field :image_url %>
   </p>
 
-  <%= form.submit "更新" %>
-  <%= button_to "削除", products_path(@products), method: :delete %>
+  <%= form.submit "更新", method: :update %>
 <% end %>
