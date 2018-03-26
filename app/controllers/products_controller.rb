@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   def index
     @q = Product.order(created_at: :desc).ransack(params[:q])
     @products = @q.result(distinct: true)
+    @products = @products.where.not(volume: "0")
   end
 
   def new
