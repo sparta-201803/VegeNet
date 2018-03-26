@@ -12,7 +12,7 @@
 
     <div class="collapse navbar-collapse" id="navbar-collapse-menu">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">VegeNet</a></li>
+        <li><%=link_to "生産者の方々", users_path %></li>
         <% if user_signed_in? %>
           <% if User.find(current_user.id).area_id %>
             <li><%= link_to "出品", new_product_path %></li>

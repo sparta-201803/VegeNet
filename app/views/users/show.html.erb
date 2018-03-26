@@ -1,6 +1,5 @@
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
-
     <h2>生産者の詳細</h2>
     <%= image_tag @user.img_url %><br>
     <%= @user.name %><br>
@@ -10,3 +9,5 @@
     </div>
   </div>
 </div>
+<h2>生産者の商品一覧</h2>
+<%= render partial: 'products/product_index' %>

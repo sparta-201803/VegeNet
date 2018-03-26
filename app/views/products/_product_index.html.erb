@@ -1,0 +1,19 @@
+<% @products.each do |product| %>
+    <div class="col-md-3 col-sm-6 red">
+      <div class="form-group">
+          <div class="col-md-12">
+            <%= image_tag product.image_url %>
+          </div>
+          <div class="col-md-12">
+            <%= link_to product.user.name,user_path(product.user) %>
+          </div>
+          <div class="col-md-12">
+            <%= link_to product.name, product %>
+          </div>
+          <div class="col-md-12">
+            ¥<%= product.price %>
+          </div>
+        </ul>
+      </div>
+    </div>
+<% end %>
