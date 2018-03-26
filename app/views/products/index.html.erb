@@ -1,4 +1,3 @@
-
 <div class="col-md-12">
  <div class="form-inline pull-right" style="margin-bottom:10px;">
    <%= search_form_for @q do |f| %>
@@ -10,17 +9,21 @@
  </div>
 </div>
 
-
 <% @products.each do |product| %>
-
-
-
     <div class="col-md-3 col-sm-6 red">
       <div class="form-group">
-        <ul>
-          <li><%= image_tag product.image_url %></li>
-          <li>生産者｜<%= link_to product.user.name,user_path(product.user) %></li>
-          <li>商品名｜<%= link_to product.name, product %></li>
+          <div class="col-md-12">
+            <%= image_tag product.image_url %>
+          </div>
+          <div class="col-md-12">
+            <%= link_to product.user.name,user_path(product.user) %>
+          </div>
+          <div class="col-md-12">
+            <%= link_to product.name, product %>
+          </div>
+          <div class="col-md-12">
+            ¥<%= product.price %>
+          </div>
         </ul>
       </div>
     </div>

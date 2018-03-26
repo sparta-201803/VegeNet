@@ -2,7 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 img{
-  height:200px;
+  height:250px;
+  width:250px;
+  object-fit: contain;
 }
 .abc {
   word-wrap: break-word;

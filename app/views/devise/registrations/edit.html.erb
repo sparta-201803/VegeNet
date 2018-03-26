@@ -17,7 +17,7 @@
         <%= f.label :email, "電子メール" %><br />
         <%= f.email_field :email, class: "form-control" %>
       </div>
-
+      <h3>出品する場合は下記の設定も必要です</h3>
       <div class="form-group">
         <%= f.label :area_id, "地域名" %>
         <%= f.collection_select :area_id, Area.all, :id, :area_name , { include_blank: "地域を選択してください" },  { class: "form-control" } %>
@@ -37,7 +37,7 @@
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
-
+      <h3>パスワード変更</h3>
       <div class="form-group">
         <%= f.label :password, "新しいパスワード" %> <i>（入力しない限り変更しません）</i><br />
         <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
@@ -47,7 +47,7 @@
         <%= f.label :password_confirmation, "新しいパスワード（再入力）" %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
       </div>
-
+      <h3>設定保存</h3>
       <div class="form-group">
         <%= f.label :current_password, "現在のパスワード" %> <i>（設定を変更する場合は、現在のパスワード入力が必要です）</i><br />
         <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
