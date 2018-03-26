@@ -17,9 +17,11 @@
 
     <div class="col-md-3 col-sm-6 red">
       <div class="form-group">
-        <%= image_tag product.image_url %><br>
-        <%= link_to product.user.name,user_path(product.user) %><br>
-        <%= link_to product.name, product %>
+        <ul>
+          <li><%= image_tag product.image_url %></li>
+          <li>生産者｜<%= link_to product.user.name,user_path(product.user) %></li>
+          <li>商品名｜<%= link_to product.name, product %></li>
+        </ul>
       </div>
     </div>
 

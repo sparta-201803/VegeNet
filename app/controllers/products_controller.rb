@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   def index
     @q = Product.order(created_at: :desc).ransack(params[:q])
     @products = @q.result(distinct: true)
