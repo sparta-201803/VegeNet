@@ -11,7 +11,8 @@
       商品説明：<%= @product.description %>
     </div>
     <% if @product.volume > 0 %>
-      <%= button_to "購入", buy_product_path(@product), method: :post %>
+      <!-- <%= button_to "購入", buy_product_path(@product), method: :post %> -->
+      <%= button_to "アカウントを削除する", buy_product_path(@product), data: { confirm: "本当に購入しますか？" }, method: :post, class: "btn btn-default" %>
     <% else %>
       <%= button_to "購入", buy_product_path(@product), disabled: true %>
     <% end %>
