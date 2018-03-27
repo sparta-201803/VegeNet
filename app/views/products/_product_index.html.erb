@@ -2,7 +2,7 @@
     <div class="col-md-3 col-sm-6">
       <div class="form-group">
           <div class="col-md-12">
-            <%= image_tag product.image_url %>
+            <%= image_tag product.image_url.to_s %>
           </div>
           <div class="col-md-12">
             <%= link_to product.user.area.area_name,user_path(product.user) %>
