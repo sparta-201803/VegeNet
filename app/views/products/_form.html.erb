@@ -1,13 +1,4 @@
-<% if product.errors.any? %>
-  <div class="alert alert-danger">
-    <p><b><%= product.errors.count %>件のエラーがあります</b></p>
-    <ul>
-      <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render partial: 'error', locals: { err: @product } %>
 <%= form_with model: @product, local: true do |form| %>
   <p>生産者名: <%= current_user.name %></p>
   <p>
