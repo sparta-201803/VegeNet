@@ -1,7 +1,7 @@
 <% @products.each do |product| %>
-    <div class="col-md-3 col-sm-6 red">
+    <div class="col-md-3 col-sm-6 glay">
       <div class="form-group">
-          <div class="col-md-12">
+          <div class="col-md-12 glay">
             <%= image_tag product.image_url %>
           </div>
           <div class="col-md-12">
@@ -11,7 +11,10 @@
           <div class="col-md-12">
             <%= link_to product.name, product %>
           </div>
-          <div class="col-md-12">
+          <div class="col-sm-12">
+            残り <%= product.volume %> 個
+          </div>
+          <div class="col-sm-12">
             ¥<%= product.price %>
           </div>
         </ul>
