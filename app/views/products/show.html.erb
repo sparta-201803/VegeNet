@@ -14,11 +14,11 @@
       <!-- <%= button_to "購入", buy_product_path(@product), method: :post %> -->
       <%= button_to "購入", buy_product_path(@product), data: { confirm: "本当に購入しますか？" }, method: :post, class: "btn btn-default" %>
     <% else %>
-      <%= button_to "購入", buy_product_path(@product), disabled: true %>
+      <%= button_to "購入", buy_product_path(@product), disabled: true, class: "btn btn-default"  %>
     <% end %>
     <% if current_user %>
       <% if current_user.id == @product.user_id %>
-        <%= button_to "編集", edit_product_path, method: :get %>
+        <%= button_to "編集", edit_product_path, method: :get, class: "btn btn-default"  %>
       <% end %>
     <% end %>
   </div>
