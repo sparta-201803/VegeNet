@@ -10,10 +10,10 @@ if Rails.env.production?
         :provider              => 'AWS',
         :aws_access_key_id     => ENV['ACCESS_KEY_ID'],
         :aws_secret_access_key => ENV['SECRET_KEY_ID'],
-        :region                => ENV['REGION'],
+        :region                => 'ap-northeast-1',
     }
 
-    config.fog_directory = ENV['BUCKET_NAME']
+    config.fog_directory = 'vegenet'
     config.fog_public = true
   end
 else
@@ -21,3 +21,5 @@ else
     config.storage = :file
   end
 end
+# 日本語入力を可能にするため。
+CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
