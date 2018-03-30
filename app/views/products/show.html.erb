@@ -11,8 +11,11 @@
       商品説明：<%= @product.description %>
     </div>
     <% if @product.volume > 0 %>
-      <!-- <%= button_to "購入", buy_product_path(@product), method: :post %> -->
-      <%= button_to "購入", buy_product_path(@product), data: { confirm: "本当に購入しますか？" }, method: :post, class: "btn btn-default" %>
+      <%= button_to "購入", new_transaction_path(transaction:{
+        user_id: current_user.id,    seller_id: @product.user_id,
+        product_name: @product.name, product_price: @product.price,
+        product_volume: 1,}
+        ), class: "btn btn-default" %>
     <% else %>
       <%= button_to "購入", buy_product_path(@product), disabled: true, class: "btn btn-default"  %>
     <% end %>
