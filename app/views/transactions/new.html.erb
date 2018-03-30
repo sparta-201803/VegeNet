@@ -1,0 +1,19 @@
+<h1>購入確認画面</h1>
+<%= form_with model: @transaction, local: true do |f| %>
+  <p>購入者：<%= current_user.name %></p>
+  <%= f.hidden_field :user_id %>
+
+  <p>商品名：<%= @transaction.product_name %></p>
+  <%= f.hidden_field :product_name %>
+
+  <p>価　格：<%= @transaction.product_price %></p>
+  <%= f.hidden_field :product_price %>
+
+  <p>数　量：<%= f.number_field :product_volume %></p>
+
+  <p>生産者：<%= User.find(@transaction.seller_id).name %></p>
+  <%= f.hidden_field :seller_id %>
+  <%= f.hidden_field :product_user, value: User.find(@transaction.seller_id).name%>
+
+  <%= button_to "購入", transactions_path(@transaction), data:{confirm: "購入してよろしいですか？"} %>
+<% end %>

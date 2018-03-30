@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  production_name: MyString
+  production_price: 1
+  production_volume: 1
+  production_user: MyString
+
+two:
+  user_id: 1
+  production_name: MyString
+  production_price: 1
+  production_volume: 1
+  production_user: MyString

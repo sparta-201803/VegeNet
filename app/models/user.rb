@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   belongs_to :area, optional: true
   has_many :products
+  has_many :transacions
 
   mount_uploader :img_url, AvatarUploader
 
