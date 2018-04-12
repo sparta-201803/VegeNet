@@ -40,11 +40,6 @@ class ProductsController < ApplicationController
 
   end
 
-  def buy
-    @product = Product.find(params[:id])
-    @product.volume = @product.volume.to_i - 1
-    @product.save
-  end
   private
 
   def product_params
