@@ -1,0 +1,10 @@
+<h1>お買い上げありがとうございます</h1>
+<p>購入した商品</p>
+<p>購入者：<%= User.find(@transaction.user_id).name %></p>
+<p>商品名：<%= @transaction.product_name %></p>
+<p>価　格：<%= @transaction.product_price %></p>
+<p>数　量：<%= @transaction.product_volume %></p>
+<% total_value = @transaction.product_volume.to_i * @transaction.product_price.to_i %>
+<p>合　計：<%= total_value.to_s %></p>
+<p>生産者：<%= User.find(@transaction.seller_id).name %></p>
+<%= link_to '戻る',products_path, class: "btn btn-default" %>

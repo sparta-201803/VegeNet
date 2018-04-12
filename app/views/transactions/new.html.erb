@@ -14,6 +14,6 @@
   <p>生産者：<%= User.find(@transaction.seller_id).name %></p>
   <%= f.hidden_field :seller_id %>
   <%= f.hidden_field :product_user, value: User.find(@transaction.seller_id).name%>
-
+  <%= f.hidden_field :product_id,   value: @transaction.product_id%>
   <%= button_to "購入", transactions_path(@transaction), data:{confirm: "購入してよろしいですか？"} %>
 <% end %>

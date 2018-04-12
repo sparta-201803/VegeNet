@@ -9,10 +9,17 @@ class TransactionsController < ApplicationController
   def create
     @transaction = Transaction.new(transaction_params)
     if @transaction.save
-      redirect_to products_path
+      @product = Product.find(@transaction.product_id)
+      @product.volume = @product.volume.to_i - @transaction.product_volume.to_i
+      @product.save
+      redirect_to transaction_path(@transaction)
     else
       render :new
     end
+  end
+
+  def buy
+    @transaction = Transaction.find(params[:id])
   end
 
   def edit
@@ -21,11 +28,20 @@ class TransactionsController < ApplicationController
   def update
   end
 
+  def show
+    @transaction = Transaction.find(params[:id])
+  end
+
   def destroy
   end
 
   private
   def transaction_params
-    params.require(:transaction).permit(:user_id, :seller_id, :product_name, :product_price, :product_volume, :product_user)
+    params.require(:transaction).permit(
+      :user_id,         :seller_id,
+      :product_name,    :product_price,
+      :product_volume,  :product_user,
+      :product_id
+    )
   end
 end
